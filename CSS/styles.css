@@ -1,0 +1,76 @@
+.navbar {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0.5rem 1rem;
+}
+
+.brand-logo a h2 {
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  line-height: 1.42;
+}
+
+.navbar .navbar-nav {
+  margin-left: auto;
+}
+
+.main-menu {
+  display: flex;
+}
+
+.main-menu .nav-item {
+  margin: 12px;
+  padding: 6px;
+  font-size: 15px;
+  line-height: 26px;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.full-site__modal {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  transition: all 0.35s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal-header {
+  display: flex;
+  padding-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header .fa-times {
+  font-size: 1.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal-header .fa-times:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.full-site__modal.is-visable {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-body {
+  display: flex;
+  align-items: center;
+}
+
+[data-animation="zoomInOut"].full-site__modal {
+  transform: scale(0.2);
+}
+
+[data-animation="zoomInOut"].full-site__modal.is-visable {
+  transform: none;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/3f1e616f56.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/CSS/base.css" />
+    <link rel="stylesheet" href="/CSS/pages.css" />
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <link rel="stylesheet" href="/CSS/theme.css" />
+    <script src="./JS/main.js" defer></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <main class="site-wrapper">
+      <header class="site-header">
+        <nav class="navbar">
+          <div class="brand-logo">
+            <a href="/"><h2>folio.</h2></a>
+          </div>
+          <div class="navbar-nav">
+            <ul class="ul-defaults-none main-menu">
+              <li class="nav-item">Home</li>
+              <li class="nav-item" data-open="about">About Me</li>
+              <li class="nav-item" data-open="contact">Contact</li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </main>
+
+    <div
+      id="about"
+      class="full-site__modal page-block"
+      data-animation="zoomInOut"
+    >
+      <header class="modal-header">
+        <h3>ABOUT PAGE</h3>
+        <i class="fas fa-times" data-close></i>
+      </header>
+      <div class="modal-body">
+        <div class="img-wrapper">
+          <img src="./assets/images/img4.jpg" alt="headshot" />
+        </div>
+        <h2>Taylor Lirot</h2>
+        <p>Text 1</p>
+        <p>Text 2</p>
+        <div>
+          <div>Email Me:</div>
+          <a href="mailto:taylir@taylorfel.com">taylir@taylorfel.com</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
