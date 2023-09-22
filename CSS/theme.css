@@ -1,9 +1,27 @@
 :root {
-  --bg: #fff;
-  --bg-panel: #fff;
+  --bg: #e9e9e9;
+  --bg-panel: #e9e9e9;
   --color-headings: #161c2d;
   --color-text-opacity: rgba(22, 28, 45, 0.7);
   --color-text: #161c2d;
   --color-text-base: #161c2d;
   --border: #383f53;
+}
+
+.hero-bg {
+  background: url("../assets/images/hero-pattern.webp") center/cover no-repeat;
+}
+
+[data-theme="dark"] .hero-bg {
+  filter: invert(1);
+}
+
+[data-theme="dark"] {
+  --bg: #171a23;
+  --bg-panel: #f1f1f1;
+  --color-headings: #fff;
+  --color-text-opacity: rgba(255, 255, 255, 0.7);
+  --color-text: #fff;
+  --color-text-base: #161c2d;
+  --border: #ced4da;
 }
