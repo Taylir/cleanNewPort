@@ -18,12 +18,24 @@ const chevronTab = document.querySelector(themeTab);
 const switcher = document.querySelectorAll(switcherBtn);
 const currentTheme = localStorage.getItem(theme);
 
-const setActive = (elm, selector) => {
-  if (document.querySelector(`${selector}.${active}`) !== null) {
-    document.querySelector(`${selector}.${active}`).classList.remove(active);
+if (currentTheme) {
+  root.setAttribute(dataTheme, currentTheme);
+  switcher.forEach((btn) => {
+    btn.classList.remove(active);
+  });
+
+  if (currentTheme === dark) {
+    switcher[1].classList.add(active);
   } else {
-    elm.classList.add(active);
+    switcher[0].classList.add(active);
   }
+}
+
+const setActive = (elm, selector) => {
+  if (document.querySelector(`${selector}.${active}`)) {
+    document.querySelector(`${selector}.${active}`).classList.remove(active);
+  }
+  elm.classList.add(active);
 };
 
 const setTheme = (val) => {
