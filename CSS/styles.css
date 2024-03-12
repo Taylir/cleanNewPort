@@ -142,6 +142,12 @@
   align-items: center;
 }
 
+.portfolio-grid {
+  display: grid;
+  gap: 1.5rem;
+  place-items: center; 
+}
+
 #search {
   padding: 0.75rem 1.5rem;
   background-color: #f1f3f5;
@@ -187,7 +193,6 @@
 
 .portfolio-card {
   position: relative;
-  margin: 0 1rem 1.85rem;
   max-width: 255px;
 }
 
@@ -300,4 +305,17 @@
 
 [data-animation="zoomInOut"].full-site__modal.is-visable {
   transform: none;
+}
+
+
+@media (min-width:728px) {
+.portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width:980px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
