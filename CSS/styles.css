@@ -145,7 +145,7 @@
 .portfolio-grid {
   display: grid;
   gap: 1.5rem;
-  place-items: center; 
+  place-items: center;
 }
 
 #search {
@@ -190,10 +190,9 @@
   color: #495fef;
 }
 
-
 .portfolio-card {
   position: relative;
-  max-width: 255px;
+  width: 255px;
 }
 
 .portfolio-card:hover .card-popup-box {
@@ -227,10 +226,10 @@
 
 .card-popup-box:before {
   content: "";
-  background:var(--bg);
+  background: var(--bg);
   position: absolute;
   top: 0;
-  right:0;
+  right: 0;
   bottom: 0;
   left: 0;
   z-index: -1;
@@ -282,7 +281,7 @@
 .modal-header .fa-times {
   font-size: 1.5rem;
   transition: all 0.5s ease-in-out;
-}
+} 
 
 .modal-header .fa-times:hover {
   cursor: pointer;
@@ -307,15 +306,20 @@
   transform: none;
 }
 
-
-@media (min-width:728px) {
-.portfolio-grid {
+@media (min-width: 728px) {
+  .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width:980px) {
+@media (min-width: 980px) {
   .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1150px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
