@@ -1,3 +1,102 @@
+const workModals = [
+  {
+    type: "web",
+    html: `<div class="portfolio-card" data-open="web-1">
+      <div class="card-body">
+        <img src="./assets/images/portfolio-1.jpg" alt="Portfolio Icon" />
+        <a href="#" class="card-popup-box">
+          <div>Web Development</div>
+          <h3>Skate Website</h3>
+        </a>
+      </div>
+    </div>`,
+  },
+  {
+    type: "web",
+    html: `<div class="portfolio-card" data-open="web-1">
+      <div class="card-body">
+        <img src="./assets/images/portfolio-2.jpg" alt="Portfolio Icon" />
+        <a href="#" class="card-popup-box">
+          <div>Web Development</div>
+          <h3>Eating Website</h3>
+        </a>
+      </div>
+    </div>`,
+  },
+  {
+    type: "web",
+    html: `<div class="portfolio-card" data-open="web-1">
+    <div class="card-body">
+      <img src="./assets/images/portfolio-3.jpg" alt="Portfolio Icon" />
+      <a href="#" class="card-popup-box">
+        <div>Web Development</div>
+        <h3>Food Website</h3>
+      </a>
+    </div>
+  </div>`,
+  },
+  {
+    type: "ui",
+    html: `<div class="portfolio-card" data-open="web-1">
+    <div class="card-body">
+      <img src="./assets/images/portfolio-4.jpg" alt="Portfolio Icon" />
+      <a href="#" class="card-popup-box">
+        <div>UI Design</div>
+        <h3>Cool Design</h3>
+      </a>
+    </div>
+  </div>`,
+  },
+  {
+    type: "ui",
+    html: `<div class="portfolio-card" data-open="web-1">
+    <div class="card-body">
+      <img src="./assets/images/portfolio-5.jpg" alt="Portfolio Icon" />
+      <a href="#" class="card-popup-box">
+        <div>UI Design</div>
+        <h3>Super cool design</h3>
+      </a>
+    </div>
+  </div>`,
+  },
+  {
+    type: "app",
+    html: `<div class="portfolio-card" data-open="web-1">
+    <div class="card-body">
+      <img src="./assets/images/portfolio-6.jpg" alt="Portfolio Icon" />
+      <a href="#" class="card-popup-box">
+        <div>App Development</div>
+        <h3>Money App</h3>
+      </a>
+    </div>
+  </div>`,
+  },
+  {
+    type: "app",
+    html: `<div class="portfolio-card" data-open="web-1">
+    <div class="card-body">
+      <img src="./assets/images/portfolio-7.jpg" alt="Portfolio Icon" />
+      <a href="#" class="card-popup-box">
+        <div>App Development</div>
+        <h3>Food App</h3>
+      </a>
+    </div>
+  </div>`,
+  },
+  {
+    type: "app",
+    html: `<div class="portfolio-card" data-open="web-1">
+    <div class="card-body">
+      <img src="./assets/images/portfolio-8.jpg" alt="Portfolio Icon" />
+      <a href="#" class="card-popup-box">
+        <div>App Development</div>
+        <h3>Awesome App</h3>
+      </a>
+    </div>
+  </div>`,
+  },
+];
+
 const theme = "theme";
 const dataTheme = "data-theme";
 const themeTab = ".theme-tab";
@@ -65,6 +164,8 @@ for (const elm of switcher) {
 }
 
 // Portfolio
+const portGrid = document.querySelector(".portfolio-grid");
+workModals.forEach((card) => (portGrid.innerHTML += card.html));
 
 const filterLink = document.querySelectorAll(dataFilter);
 const portfolioItems = document.querySelectorAll(portfolioData);
@@ -72,15 +173,15 @@ const searchBox = document.querySelector("#search");
 
 for (const link of filterLink) {
   link.addEventListener("click", function () {
+    portGrid.innerHTML = "";
     setActive(link, ".filter-link");
     const filter = this.dataset.filter;
-    portfolioItems.forEach((card) => {
-      if (filter === "all") {
-        card.style.display = "block";
-      } else if (card.dataset.item === filter) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
+    workModals.forEach((card) => {
+      if (card.type == filter) {
+        portGrid.innerHTML += card.html;
+      }
+      if (filter == "all") {
+        portGrid.innerHTML += card.html;
       }
     });
   });
@@ -88,15 +189,15 @@ for (const link of filterLink) {
 
 searchBox.addEventListener("keyup", (e) => {
   const searchInput = e.target.value.toLowerCase().trim();
-
-  portfolioItems.forEach(card => {
-    if (card.dataset.item.includes(searchInput)) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
+  portGrid.innerHTML = "";
+  workModals.forEach((card) => {
+    if (card.type.includes(searchInput)) {
+      portGrid.innerHTML += card.html;
     }
-  })
-
+    if (e == "") {
+      portGrid.innerHTML += card.html;
+    }
+  });
 });
 
 //Modals
@@ -114,7 +215,23 @@ for (const elm of openModal) {
 function closeOpenModal() {
   for (const elm of closeModal) {
     elm.addEventListener("click", function () {
-      this.parentElement.parentElement.classList.remove(isVisable);
+      this.parentElement.parentElement.parentElement.classList.remove(
+        isVisable
+      );
     });
   }
 }
+
+//modal
+
+document.addEventListener("click", (e) => {
+  if (e.target === document.querySelector(".modal.is-visable")) {
+    document.querySelector(".modal.is-visable").classList.remove(isVisable);
+  }
+});
+
+document.addEventListener("keyup", (e) => {
+  if (e.key === "Escape") {
+    document.querySelector(".modal.is-visable").classList.remove(isVisable);
+  }
+});
