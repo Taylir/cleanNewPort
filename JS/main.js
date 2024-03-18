@@ -13,7 +13,7 @@ const workModals = [
   },
   {
     type: "web",
-    html: `<div class="portfolio-card" data-open="web-1">
+    html: `<div class="portfolio-card" data-open="web-2">
       <div class="card-body">
         <img src="./assets/images/portfolio-2.jpg" alt="Portfolio Icon" />
         <a href="#" class="card-popup-box">
@@ -25,7 +25,7 @@ const workModals = [
   },
   {
     type: "web",
-    html: `<div class="portfolio-card" data-open="web-1">
+    html: `<div class="portfolio-card" data-open="web-3">
     <div class="card-body">
       <img src="./assets/images/portfolio-3.jpg" alt="Portfolio Icon" />
       <a href="#" class="card-popup-box">
@@ -37,7 +37,7 @@ const workModals = [
   },
   {
     type: "ui",
-    html: `<div class="portfolio-card" data-open="web-1">
+    html: `<div class="portfolio-card" data-open="ui-1">
     <div class="card-body">
       <img src="./assets/images/portfolio-4.jpg" alt="Portfolio Icon" />
       <a href="#" class="card-popup-box">
@@ -49,7 +49,7 @@ const workModals = [
   },
   {
     type: "ui",
-    html: `<div class="portfolio-card" data-open="web-1">
+    html: `<div class="portfolio-card" data-open="ui-2">
     <div class="card-body">
       <img src="./assets/images/portfolio-5.jpg" alt="Portfolio Icon" />
       <a href="#" class="card-popup-box">
@@ -61,7 +61,7 @@ const workModals = [
   },
   {
     type: "app",
-    html: `<div class="portfolio-card" data-open="web-1">
+    html: `<div class="portfolio-card" data-open="app-1">
     <div class="card-body">
       <img src="./assets/images/portfolio-6.jpg" alt="Portfolio Icon" />
       <a href="#" class="card-popup-box">
@@ -73,7 +73,7 @@ const workModals = [
   },
   {
     type: "app",
-    html: `<div class="portfolio-card" data-open="web-1">
+    html: `<div class="portfolio-card" data-open="app-2">
     <div class="card-body">
       <img src="./assets/images/portfolio-7.jpg" alt="Portfolio Icon" />
       <a href="#" class="card-popup-box">
@@ -85,7 +85,7 @@ const workModals = [
   },
   {
     type: "app",
-    html: `<div class="portfolio-card" data-open="web-1">
+    html: `<div class="portfolio-card" data-open="app-3">
     <div class="card-body">
       <img src="./assets/images/portfolio-8.jpg" alt="Portfolio Icon" />
       <a href="#" class="card-popup-box">

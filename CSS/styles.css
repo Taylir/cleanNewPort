@@ -193,6 +193,7 @@
 .portfolio-card {
   position: relative;
   width: 255px;
+  cursor: pointer;
 }
 
 .portfolio-card:hover .card-popup-box {
@@ -263,6 +264,7 @@
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 
 .modal,
@@ -276,6 +278,7 @@
   transition: all 0.35s ease-in-out;
   visibility: hidden;
   opacity: 0;
+  z-index: 1000;
 }
 
 .modal-dialog {
@@ -286,6 +289,7 @@
   overflow: hidden;
   padding: 1.25rem 1.85rem;
   border-radius: 5px;
+  cursor: default;
 }
 
 .img-wrapper {
@@ -303,6 +307,10 @@
   padding-bottom: 1rem;
   justify-content: space-between;
   align-items: center;
+}
+
+.modal-dialog .modal-header h3 {
+  color: var(--color-text-base);
 }
 
 .modal-header .fa-times {
@@ -330,9 +338,23 @@
   transform: scale(0.2);
 }
 
-[data-animation="zoomInOut"].full-site__modal.is-visable {
+[data-animation="slideInOutTop"] .modal-dialog {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 500ms ease-in-out;
+}
+
+[data-animation="slideInOutTop"].is-visable .modal-dialog {
+  opacity: 1;
+  transition-delay: 200ms;
+}
+
+[data-animation="zoomInOut"].full-site__modal.is-visable,
+[data-animation="slideInOutTop"].is-visable .modal-dialog {
   transform: none;
 }
+
+/* media stuff */
 
 @media (min-width: 728px) {
   .portfolio-grid {
@@ -346,7 +368,7 @@
   }
 }
 
-@media (min-width: 1150px) {
+@media (min-width: 1100px) {
   .portfolio-grid {
     grid-template-columns: repeat(4, 1fr);
   }
