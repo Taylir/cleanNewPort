@@ -477,3 +477,15 @@ document.addEventListener("keyup", (e) => {
     document.querySelector(".modal.is-visable").classList.remove(isVisable);
   }
 });
+
+// Marquee in about modal
+const elmsDisplayed = getComputedStyle(root).getPropertyValue(
+  "--marquee-elms-displayed"
+);
+const marqueeContent = document.querySelector("ul.marquee-content");
+
+root.style.setProperty("--marquee-elms", marqueeContent.children.length);
+
+for (let i = 0; i < elmsDisplayed; i++) {
+  marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+}
