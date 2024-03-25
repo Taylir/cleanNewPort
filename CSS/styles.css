@@ -294,7 +294,7 @@
   background: none;
   outline: none;
   padding: 0.5rem;
-  border: 2px outset var(--color-text);
+  border: 2px solid var(--color-text);
   border-radius: 100%;
   color: var(--color-text);
   font-size: 32px;
