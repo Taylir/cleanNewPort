@@ -2,7 +2,7 @@
   position: fixed;
   right: 0;
   top: 25%;
-  z-index: 10000;
+  z-index: 100;
   transform: translateX(100%);
   transition: all 400ms ease-in-out;
 }
@@ -321,7 +321,7 @@
   display: flex;
   justify-content: center;
   height: 250px;
-  margin: 200px 0;
+  margin: 200px 0 50px;
   pointer-events: none;
 }
 
@@ -423,7 +423,7 @@ div.review-item.next {
   transition: all 0.35s ease-in-out;
   visibility: hidden;
   opacity: 0;
-  z-index: 1000;
+  z-index: 50;
 }
 
 .modal-dialog {
@@ -522,6 +522,18 @@ div.review-item.next {
 @media (min-width: 980px) {
   .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  #about .img-wrapper,
+  #about .about-text {
+    flex: initial;
+    margin: 0 auto;
+  }
+
+  .page-block {
+    text-align: center;
   }
 }
 
