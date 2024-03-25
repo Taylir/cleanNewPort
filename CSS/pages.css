@@ -61,6 +61,19 @@
   list-style: none;
   display: flex;
   height: 100%;
+  animation: scrolling var(--marquee-duration-animation) linear infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(
+      calc(-1 * var(--marquee-elm-width) * var(--marquee-elms))
+    );
+  }
 }
 
 .marquee-content li {
