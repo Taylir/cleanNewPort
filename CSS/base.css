@@ -2,9 +2,7 @@
   --marquee-width: 80vw;
   --marquee-height: 15vh;
   --marquee-elms-displayed: 5;
-  --marquee-elm-width: calc(
-    var(--marquee-width) / var(--marquee-elms-displayed)
-  );
+  --marquee-elm-width: calc(var(--marquee-width) / var(--marquee-elms-displayed));
   --marquee-duration-animation: calc(var(--marquee-elms) * 3s);
 }
 
@@ -117,4 +115,22 @@ button:not(:disabled):not(.disabled) {
   line-height: 1.5;
   padding-top: 1.25rem;
   padding-bottom: 1.875rem;
+}
+
+footer {
+  color: white;
+  height: 8vmin;
+  width: 100%;
+  background-color: #1f2937;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.footerEnd {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+  background-image: linear-gradient(90deg, coral, #105e82);
 }

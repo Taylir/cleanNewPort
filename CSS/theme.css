@@ -6,6 +6,7 @@
   --color-text: #161c2d;
   --color-text-base: #161c2d;
   --border: #383f53;
+  --filter-links: oklch(0.8711 0.027 271.83);
 }
 
 .hero-bg {

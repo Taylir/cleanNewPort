@@ -86,7 +86,9 @@
 .navbar {
   display: flex;
   flex-flow: row nowrap;
-  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem 2rem;
 }
 
 .brand-logo a h2 {
@@ -101,12 +103,15 @@
 
 .main-menu {
   display: flex;
+  gap: 4px;
 }
 
 .main-menu .nav-item {
-  margin: 12px;
-  padding: 6px;
-  font-size: 15px;
+  background-color: var(--filter-links);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+  font-weight: bold;
   line-height: 26px;
   cursor: pointer;
   text-transform: lowercase;
@@ -194,6 +199,7 @@
 .filter-link.active {
   color: #495fef;
   background-color: var(--filter-links-active);
+  border: 2px solid var(--filter-links);
 }
 
 .portfolio-card {
