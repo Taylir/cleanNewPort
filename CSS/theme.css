@@ -24,4 +24,6 @@
   --color-text: #fff;
   --color-text-base: #161c2d;
   --border: #ced4da;
+  --filter-links: oklch(0.3456 0.0814 243);
+  --filter-links-active: oklch(0.60 0.0614 243 / 30%);
 }
